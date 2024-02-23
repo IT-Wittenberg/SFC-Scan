@@ -5,7 +5,7 @@
 char *getenv(const char *varname);
 
 int main(void) {
-    printf("Test : %s\n", getenv("TEST"));
+    printf("HOME : %s\n", getenv("HOME"));
 
     system("pause");
     return 0;

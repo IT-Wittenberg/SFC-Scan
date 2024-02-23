@@ -1,70 +1,18 @@
-2024-02-22 11:32 - { NBNRH-163375
-2024-02-22 11:32 -   Start Scan for damaged systemfiles }
-2024-02-22 11:33 - { NBNRH-163375
-2024-02-22 11:33 -   Keine beschädigten Dateien gefunden. }
-2024-02-22 11:35 - { NBNRH-163375
-2024-02-22 11:35 -   Gefundene beschädigte wurden repariert. }
-2024-02-22 11:37 - { NBNRH-163375
-2024-02-22 11:37 -   Gefundene beschädigte wurden repariert. }
-2024-02-22 11:39 - { NBNRH-163375
-2024-02-22 11:39 -   Gefundene beschädigte wurden repariert. }
-2024-02-22 11:41 - { NBNRH-163375
-2024-02-22 11:41 -   Gefundene beschädigte wurden repariert. }
-2024-02-22 11:41 - { NBNRH-163375
-2024-02-22 11:41 -   Scan wurde abgebrochen. LIMIT ERREICHT! }
-2024-02-22 11:56 - { NBNRH-163375
-2024-02-22 11:56 -   Systemsuche wird gestartet. }
-2024-02-22 11:57 - { NBNRH-163375
-2024-02-22 11:57 -   Keine Integritätsverletzungen gefunden. }
-2024-02-22 11:59 - { NBNRH-163375
-2024-02-22 11:59 -   Gefundene Integritätsverletzungen wurde repariert. }
-2024-02-22 11:59 - { NBNRH-163375
-2024-02-22 11:59 -   Systemsuche wird gestartet. }
-2024-02-22 12:00 - { NBNRH-163375
-2024-02-22 12:00 -   Systemsuche wird gestartet. }
-2024-02-22 12:00 - { NBNRH-163375
-2024-02-22 12:00 -   ES WURDEN INTEGRITÄTSVERLETZUNGEN GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:00 - { NBNRH-163375
-2024-02-22 12:00 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:00 - { NBNRH-163375
-2024-02-22 12:00 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:01 - { NBNRH-163375
-2024-02-22 12:01 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:01 - { NBNRH-163375
-2024-02-22 12:01 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:01 - { NBNRH-163375
-2024-02-22 12:01 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   Systemsuche wird gestartet. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   ES WURDEN INTEGRITÄTSVERLETZUNGEN GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 12:02 - { NBNRH-163375
-2024-02-22 12:02 -   Scan wurde abgebrochen. LIMIT ERREICHT! }
-2024-02-22 12:03 - { NBNRH-163375
-2024-02-22 12:03 -   Systemsuche wird gestartet. }
-2024-02-22 12:05 - { NBNRH-163375
-2024-02-22 12:05 -   Keine Integritätsverletzungen gefunden. }
-2024-02-22 12:05 - { NBNRH-163375
-2024-02-22 12:05 -   Scan erfolgreich beendet. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   Systemsuche wird gestartet. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   ES WURDEN INTEGRITÄTSVERLETZUNGEN GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   ES WURDEN ERNEUTE INTEGRITÄTSVERLETZUNG GEFUNDEN! Erneuter Start des Scans. }
-2024-02-22 13:27 - { NBNRH-163375
-2024-02-22 13:27 -   Scan wurde abgebrochen. LIMIT ERREICHT! }
+2024-02-23 17:50 - { PC-Bruno
+                           SFC Scan gestartet ... }
+2024-02-23 17:50 - { PC-Bruno
+                           Keine Integritätsverletzungen gefunden }
+2024-02-23 17:50 - { PC-Bruno
+                           Scan erfolgreich beendet. Exitcode : 0 }
+2024-02-23 17:51 - { PC-Bruno
+                           SFC Scan gestartet ... }
+2024-02-23 17:51 - { PC-Bruno
+                           Keine Integritätsverletzungen gefunden }
+2024-02-23 17:51 - { PC-Bruno
+                           Scan erfolgreich beendet. Exitcode : 0 }
+2024-02-23 17:51 - { PC-Bruno
+                           SFC Scan gestartet ... }
+2024-02-23 17:51 - { PC-Bruno
+                           Keine Integritätsverletzungen gefunden }
+2024-02-23 17:51 - { PC-Bruno
+                           Scan erfolgreich beendet. Exitcode : 0 }

@@ -12,6 +12,7 @@ int unexpectedExit = 0; // Bool yes or no | 0 or 1
 void logAdd(char *text, char *host);
 
 int main(void) {
+    printf("PATH : %s\n", getenv("PATH"));
     // get client hostname
     system("hostname > t.txt");
     FILE *fp = fopen("t.txt", "r");
@@ -71,9 +72,8 @@ int main(void) {
 
 void logAdd(char *text, char *host) {
     // Logfile handling
-    //char *logfile = "\\\\stadtwbbaram\\dip$\\Log\\client_repair.log";
-    printf("TEST : %s\n", getenv("TEST"));
-    char *logfile = getenv("LOGPATH");
+    char *logfile = "D:\\Dokumente\\VisualStudio\\GitHub\\SFC-Scann\\sfc.log";
+    // char *logfile = getenv("LOGPATH");
 
     for(int i = 0; i < maxTryOpenFile; i++) {
         FILE *fp = fopen(logfile, "a");
