@@ -38,8 +38,8 @@ int main(void) {
     *pCounter = &counter;
 
     while (*pIsRunning == 0 && *pCounter < *pProgramLimiter) {
-        //int sfc_result = system("sfc /scannow");
-        int sfc_result = 0;
+        int sfc_result = system("sfc /scannow");
+        //int sfc_result = 0;
         int *pSfc_result = &sfc_result;
         if (*pSfc_result == 0) {
             // no damaged files found
