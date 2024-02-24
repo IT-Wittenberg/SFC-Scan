@@ -8,6 +8,7 @@ const int maxTryOpenFile = 3; // open the file for writing try "maxTryOpenFile" 
 int programLimiter = 5; // define the Limit the Programm trys to scan the computer
 int isRunning = 0; // Bool expression that escape the While loop ( do not Change to 1 )
 int unexpectedExit = 0; // Bool yes or no | 0 or 1
+int counter = 0; // Counting
 
 void logAdd(char *text, char *host);
 
@@ -25,43 +26,52 @@ int main(void) {
     // scan section start
     logAdd("SFC Scan gestartet ...", hostname);
 
-    int counter = 0;
+    int programLimiter = 5; // define the Limit the Programm trys to scan the computer
+    int isRunning = 0; // Bool expression that escape the While loop ( do not Change to 1 )
+    int unexpectedExit = 0; // Bool yes or no | 0 or 1
+    int counter = 0; // Counting
 
-    while (isRunning == 0 && counter < programLimiter) {
+    // Pointer declaration
+    int *pProgramLimiter = &programLimiter, 
+    *pIsRunning = &isRunning, 
+    *pUnexpectedExit = &unexpectedExit, 
+    *pCounter = &counter;
+
+    while (*pIsRunning == 0 && *pCounter < *pProgramLimiter) {
         //int sfc_result = system("sfc /scannow");
         int sfc_result = 0;
 
         if (sfc_result == 0) {
             // no damaged files found
-            if (counter > 0) {
+            if (*pCounter > 0) {
                 logAdd("Gefundene Integritätsverletzungen wurde repariert", hostname);
             } else {
                 logAdd("Keine Integritätsverletzungen gefunden", hostname);
             }
-            isRunning ++;
+            *pIsRunning ++;
         } else if (sfc_result == 1) {
             // damaged file found
-            if (counter < programLimiter-1) {
+            if (*pCounter < *pProgramLimiter-1) {
                logAdd("ETWAS IST SCHIEFGELAUFEN! Wird Scan erneut ausgeführt", hostname);
-            } else if (counter == programLimiter-1) {
+            } else if (*pCounter == *pProgramLimiter-1) {
                 logAdd("Unerwarteter fehler. Abgebrochen", hostname);
-                isRunning ++;
-                unexpectedExit ++;
+                *pIsRunning ++;
+                *pUnexpectedExit ++;
             }
         } else {
             // unkown return value from scan
             logAdd("ETWAS IST SCHIEFGELAUFEN! Unerwateter fehler", hostname);
-            isRunning ++;
-            unexpectedExit ++;
+            *pIsRunning ++;
+            *pUnexpectedExit ++;
             return -1;
         }
-        counter ++;
+        *pCounter ++;
     }
 
-    if (unexpectedExit == 1) {
+    if (*pUnexpectedExit == 1) {
         logAdd("PROGRAMM WURDE MIT UNERWARTETEN FEHLER BEENDET! Exitcode : 10", hostname);
         return 10;
-    } else if (counter == 5) {
+    } else if (*pCounter == 5) {
         logAdd("SCAN WURDE ABGEBROCHEN! LIMIT ERREICHT! Exitcode : 12", hostname);
         return 12;
     } else {
