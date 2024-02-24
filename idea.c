@@ -16,10 +16,10 @@ int main(void) {
     printf("PATH : %s\n", getenv("PATH"));
     // get client hostname
     system("hostname > t.txt");
-    FILE *fp = fopen("t.txt", "r");
+    FILE *pFp = fopen("t.txt", "r");
     char hostname[255]; // hold 1 Line
-    fgets(hostname, 255, fp); // read line 1
-    fclose(fp);
+    fgets(hostname, 255, pFp); // read line 1
+    fclose(pFp);
     sleep(globalDelay);
     system("del t.txt");
 
@@ -40,8 +40,8 @@ int main(void) {
     while (*pIsRunning == 0 && *pCounter < *pProgramLimiter) {
         //int sfc_result = system("sfc /scannow");
         int sfc_result = 0;
-
-        if (sfc_result == 0) {
+        int *pSfc_result = &sfc_result;
+        if (*pSfc_result == 0) {
             // no damaged files found
             if (*pCounter > 0) {
                 logAdd("Gefundene Integritätsverletzungen wurde repariert", hostname);
@@ -49,8 +49,8 @@ int main(void) {
                 logAdd("Keine Integritätsverletzungen gefunden", hostname);
             }
             *pIsRunning ++;
-        } else if (sfc_result == 1) {
-            // damaged file found
+        } else if (*pSfc_result == 1) {
+            // damaged files found
             if (*pCounter < *pProgramLimiter-1) {
                logAdd("ETWAS IST SCHIEFGELAUFEN! Wird Scan erneut ausgeführt", hostname);
             } else if (*pCounter == *pProgramLimiter-1) {
@@ -86,9 +86,9 @@ void logAdd(char *text, char *host) {
     // char *logfile = getenv("LOGPATH");
 
     for(int i = 0; i < maxTryOpenFile; i++) {
-        FILE *fp = fopen(logfile, "a");
+        FILE *pFp = fopen(logfile, "a");
 
-        if (fp == NULL) {
+        if (pFp == NULL) {
             // cant open file
             printf("Error opening the file %s\n", logfile);
             // wait x secconds until next try
@@ -99,9 +99,9 @@ void logAdd(char *text, char *host) {
             const time_t t = time(NULL);
             struct tm tm = *localtime(&t);
             // create log
-            fprintf(fp, "%d-%02d-%02d %02d:%02d - { %s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, host);
-            fprintf(fp, "                           %s }\n", text);
-            fclose(fp);
+            fprintf(pFp, "%d-%02d-%02d %02d:%02d - { %s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, host);
+            fprintf(pFp, "                           %s }\n", text);
+            fclose(pFp);
             i = maxTryOpenFile;
         }
     }
