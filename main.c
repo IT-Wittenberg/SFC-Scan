@@ -5,21 +5,44 @@
 #include <string.h>
 
 // Global Variables
-const int globalDelay = 2; // set delay between next trys 
-const int maxTryOpenFile = 3; // open the file for writing try "maxTryOpenFile" times
 const char * logfile = "C:\\Users\\bscholz\\My Stuff\\MyVSC\\GitHub\\SFC-Scann\\sfc.log";
+const int scanLimiter = 1; // limit for retry scan { 1 means 1 retry}
+const int fileLimiter = 3; // open the file for writing try "maxTryOpenFile" times
 const char buffer[13]; // global Buffer used for getHostname {13 letter long }
 char hostname[sizeof(buffer)];
 
-
+// Prototypes
 void getHost(void);
-void logAdd(char *text, char host[sizeof(buffer)]);
-
+void logAdd(char host[sizeof(buffer)], char *text);
+int sfc_scan(void);
 
 int main(void) {
     getHost();
+    
     // scan section start
-    logAdd("SFC Scan gestartet ...", hostname);
+    int sfc_state, counter=0; 
+    logAdd(hostname, "SFC Scan gestartet ...");
+
+    while (sfc_state != 0 && counter < scanLimiter) {
+        //sfc_state = sfc_scan();
+        sfc_state = 1;
+
+        if (sfc_state != 0) {
+            logAdd(hostname, "ETWAS IST SCHIEF GELAUFEN. SCAN STARTET ERNEUT");
+            counter ++;
+        } else if (sfc_state == 0) {
+            logAdd(hostname, "Scan erfolgreich durchgelaufen");
+            return sfc_state;
+        }
+
+        if (counter == scanLimiter) {
+            logAdd(hostname, "LIMIT AN MAXIMALEN VERUSCHEN ERREICHT. SCAN ABGEBROCHEN");
+            return sfc_state;
+        }
+    }
+
+    logAdd(hostname, "ETAS IST SCHIEF GELAUFEN. UNBEKANNTER FEHLER");
+    return sfc_state;
 }
 
 void getHost(void) {
@@ -28,7 +51,8 @@ void getHost(void) {
     
     char fileText[sizeof(buffer)];
     FILE *fp;
-    fp=fopen("t.txt","r");
+
+    fp = fopen("t.txt","r");
     fgets(fileText,sizeof(buffer),fp);
     fclose(fp);
 
@@ -37,27 +61,33 @@ void getHost(void) {
     strcpy(hostname, fileText);
 }
 
-void logAdd(char *message, char host[sizeof(buffer)]) {
-    // Logfile handling
-    for(int i = 0; i < maxTryOpenFile; i++) {
-        FILE *pFp = fopen(logfile, "a");
+void logAdd(char host[sizeof(buffer)], char *message) {
+    const int delay = 2; // set delay between next trys 
+    const time_t t = time(NULL);
+    const struct tm tm = *localtime(&t);
+    
+    FILE *fp;
+    int openFile = 0;
 
-        if (pFp == NULL) {
-            // cant open file
-            printf("Error opening the file %s\n", logfile);
-            // wait x secconds until next try
-            sleep(globalDelay);
-            if (i == maxTryOpenFile-1) {
-                printf("Limit reached. No log entry created\n");
-            }
-        } else {
-            // set timestamp
-            const time_t t = time(NULL);
-            struct tm tm = *localtime(&t);
-            // create log
-            fprintf(pFp, "%d-%02d-%02d %02d:%02d - { %s } - { %s }", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, host, message);
-            fclose(pFp);
-            i = maxTryOpenFile;
+    for (int i = 0; i<fileLimiter; i++) {
+        fp = fopen(logfile, "a");
+        if (fp != NULL) {
+            openFile = 1;        
+            break;
         }
+        if (i==fileLimiter) break;
+        sleep(delay);
     }
+
+    if (openFile == 1) {
+        fprintf(fp, "%d-%02d-%02d %02d:%02d - { %s } - { %s }\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, host, message);
+        fclose(fp);
+    } else {
+        printf("Datei konnte nicht geöffnet werden. Kein Logeintrag erstellt.");
+    }
+}
+
+int sfc_scan(void) {
+    int scan_result = system("sfc /scannow");
+    return scan_result;
 }

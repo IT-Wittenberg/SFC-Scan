@@ -1,43 +1,7 @@
-2024-02-23 17:50 - { PC-Bruno
-                           SFC Scan gestartet ... }
-2024-02-23 17:50 - { PC-Bruno
-                           Keine Integritätsverletzungen gefunden }
-2024-02-23 17:50 - { PC-Bruno
-                           Scan erfolgreich beendet. Exitcode : 0 }
-2024-02-23 17:51 - { PC-Bruno
-                           SFC Scan gestartet ... }
-2024-02-23 17:51 - { PC-Bruno
-                           Keine Integritätsverletzungen gefunden }
-2024-02-23 17:51 - { PC-Bruno
-                           Scan erfolgreich beendet. Exitcode : 0 }
-2024-02-23 17:51 - { PC-Bruno
-                           SFC Scan gestartet ... }
-2024-02-23 17:51 - { PC-Bruno
-                           Keine Integritätsverletzungen gefunden }
-2024-02-23 17:51 - { PC-Bruno
-                           Scan erfolgreich beendet. Exitcode : 0 }
-2024-02-24 09:41 - { PC-Bruno
-                           SFC Scan gestartet ... }
-2024-02-24 09:41 - { PC-Bruno
-                           Keine Integritätsverletzungen gefunden }
-2024-02-24 09:41 - { PC-Bruno
-                           Scan erfolgreich beendet. Exitcode : 0 }
-2024-02-24 13:58 - { PC-Bruno
-                           SFC Scan gestartet ... }
-2024-02-24 13:58 - { PC-Bruno
-                           ETWAS IST SCHIEFGELAUFEN! Wird Scan erneut ausgeführt }
-2024-02-24 13:58 - { PC-Bruno
-                           ETWAS IST SCHIEFGELAUFEN! Wird Scan erneut ausgeführt }
-2024-02-24 13:58 - { PC-Bruno
-                           ETWAS IST SCHIEFGELAUFEN! Wird Scan erneut ausgeführt }
-2024-02-24 13:58 - { PC-Bruno
-                           SCAN WURDE ABGEBROCHEN! LIMIT ERREICHT! Exitcode : 12 }
-2024-02-24 13:58 - { PC-Bruno
-                           SFC Scan gestartet ... }
-2024-02-24 14:01 - { PC-Bruno
-                           Keine Integritätsverletzungen gefunden }
-2024-02-24 14:01 - { PC-Bruno
-                           Scan erfolgreich beendet. Exitcode : 0 }
-2024-02-26 13:09 - { NBNRH-163375                           SFC Scan gestartet ... }
-2024-02-26 13:10 - { NBNRH-163375 } - { SFC Scan gestartet ... }2024-02-26 13:15 - { NBNRH-163375
- } - { SFC Scan gestartet ... }
+2024-02-26 15:22 - { NBNRH-163375 } - { SFC Scan gestartet ... }
+2024-02-26 15:22 - { NBNRH-163375 } - { ETWAS IST SCHIEF GELAUFEN. SCAN STARTET ERNEUT }
+2024-02-26 15:22 - { NBNRH-163375 } - { ETWAS IST SCHIEF GELAUFEN. SCAN STARTET ERNEUT }
+2024-02-26 15:22 - { NBNRH-163375 } - { LIMIT AN MAXIMALEN VERUSCHEN ERREICHT. SCAN ABGEBROCHEN }
+2024-02-26 15:23 - { NBNRH-163375 } - { SFC Scan gestartet ... }
+2024-02-26 15:23 - { NBNRH-163375 } - { ETWAS IST SCHIEF GELAUFEN. SCAN STARTET ERNEUT }
+2024-02-26 15:23 - { NBNRH-163375 } - { LIMIT AN MAXIMALEN VERUSCHEN ERREICHT. SCAN ABGEBROCHEN }
