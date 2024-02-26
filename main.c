@@ -24,8 +24,7 @@ int main(void) {
     logAdd(hostname, "SFC Scan gestartet ...");
 
     while (sfc_state != 0 && counter < scanLimiter) {
-        //sfc_state = sfc_scan();
-        sfc_state = 1;
+        sfc_state = sfc_scan();
 
         if (sfc_state != 0) {
             logAdd(hostname, "ETWAS IST SCHIEF GELAUFEN. SCAN STARTET ERNEUT");
