@@ -38,3 +38,6 @@
                            Keine Integritätsverletzungen gefunden }
 2024-02-24 14:01 - { PC-Bruno
                            Scan erfolgreich beendet. Exitcode : 0 }
+2024-02-26 13:09 - { NBNRH-163375                           SFC Scan gestartet ... }
+2024-02-26 13:10 - { NBNRH-163375 } - { SFC Scan gestartet ... }2024-02-26 13:15 - { NBNRH-163375
+ } - { SFC Scan gestartet ... }
