@@ -13,7 +13,6 @@ int counter = 0; // Counting
 void logAdd(char *text, char *host);
 
 int main(void) {
-    printf("PATH : %s\n", getenv("PATH"));
     // get client hostname
     system("hostname > t.txt");
     FILE *pFp = fopen("t.txt", "r");
@@ -82,7 +81,7 @@ int main(void) {
 
 void logAdd(char *text, char *host) {
     // Logfile handling
-    char *logfile = "D:\\Dokumente\\VisualStudio\\GitHub\\SFC-Scann\\sfc.log";
+    char *logfile = "\\\\stadtwbbaram\\dip$\\Apl\\Custom Programs\\Logs\\sfc_scan.log";
     // char *logfile = getenv("LOGPATH");
 
     for(int i = 0; i < maxTryOpenFile; i++) {
