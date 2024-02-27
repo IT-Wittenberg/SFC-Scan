@@ -11,7 +11,7 @@ const int fileLimiter = 3; // open the file for writing try "maxTryOpenFile" tim
 const char buffer[13]; // global Buffer used in getHostname function {x byte long }
 char hostname[sizeof(buffer)];
 
-// Prototypes
+// Function Prototypes
 void getHost(void);
 void logAdd(char host[sizeof(buffer)], char *text);
 int sfc_scan(void);
