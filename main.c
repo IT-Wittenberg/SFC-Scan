@@ -6,9 +6,9 @@
 
 // Global Variables
 const char * logfile = "\\\\stadtwbbaram\\dip$\\Apl\\Custom Programs\\Logs\\sfc_scan.log";
-const int scanLimiter = 1; // limit for retry scan { 1 means 1 retry}
+const int scanLimiter = 1; // limit for retry scan { 1 = 1 retry}
 const int fileLimiter = 3; // open the file for writing try "maxTryOpenFile" times
-const char buffer[13]; // global Buffer used for getHostname {13 byte long }
+const char buffer[13]; // global Buffer used in getHostname function {x byte long }
 char hostname[sizeof(buffer)];
 
 // Prototypes
@@ -61,7 +61,7 @@ void getHost(void) {
 }
 
 void logAdd(char host[sizeof(buffer)], char *message) {
-    const int delay = 2; // set delay between next trys 
+    const int delay = 2; // set delay between next trys
     const time_t t = time(NULL);
     const struct tm tm = *localtime(&t);
     
