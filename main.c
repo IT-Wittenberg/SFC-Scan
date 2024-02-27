@@ -8,7 +8,7 @@
 const char * logfile = "C:\\Users\\bscholz\\My Stuff\\MyVSC\\GitHub\\SFC-Scann\\sfc.log";
 const int scanLimiter = 1; // limit for retry scan { 1 means 1 retry}
 const int fileLimiter = 3; // open the file for writing try "maxTryOpenFile" times
-const char buffer[13]; // global Buffer used for getHostname {13 letter long }
+const char buffer[13]; // global Buffer used for getHostname {13 byte long }
 char hostname[sizeof(buffer)];
 
 // Prototypes
@@ -40,7 +40,7 @@ int main(void) {
         }
     }
 
-    logAdd(hostname, "ETAS IST SCHIEF GELAUFEN. UNBEKANNTER FEHLER");
+    logAdd(hostname, "ETWAS IST SCHIEF GELAUFEN. UNBEKANNTER FEHLER");
     return sfc_state;
 }
 
