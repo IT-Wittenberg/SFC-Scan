@@ -5,7 +5,7 @@
 #include <string.h>
 
 // Global Variables
-const char * logfile = "C:\\Users\\bscholz\\My Stuff\\MyVSC\\GitHub\\SFC-Scann\\sfc.log";
+const char * logfile = "\\\\stadtwbbaram\\dip$\\Apl\\Custom Programs\\Logs\\sfc_scan.log";
 const int scanLimiter = 1; // limit for retry scan { 1 means 1 retry}
 const int fileLimiter = 3; // open the file for writing try "maxTryOpenFile" times
 const char buffer[13]; // global Buffer used for getHostname {13 byte long }
