@@ -7,16 +7,17 @@ const char buffer[10];
 int strcmp(char str1[sizeof(buffer)], char str2[sizeof(buffer)]);
 
 int main(void) {
-    char str1[sizeof(buffer)] = "ABCDEF";
-    char str2[sizeof(buffer)] = "ABCDEFG";
+    int num[1];
+    float numf[1];
 
-    if (strcmp(str1, str2) == 1) {
-        printf("Stimmen nicht ueberein :(");
-    } else {
-        printf("Stimmen ueberein :)");
+    for (int i = 0; i<sizeof(num); i++) {
+        scanf("%i", &num[i]);
     }
 
-    return 0;
+    printf("%d\n", num[0]);
+    printf("%d\n", num[1]);
+
+    return num[1];
 }
 
 int strcmp(char str1[sizeof(buffer)], char str2[sizeof(buffer)]) {
