@@ -2,20 +2,34 @@
 #include <time.h>
 #include <stdlib.h>
 
-const char buffer[10];
+const char buffer[4];
 
 int strcmp(char str1[sizeof(buffer)], char str2[sizeof(buffer)]);
 
 int main(void) {
-    char str1[sizeof(buffer)] = "ABCDEF";
-    char str2[sizeof(buffer)] = "ABCDEFG";
+    int array[4];
+    for (int i = 0; i<4; i++) {
+        array[i] = i;
+        printf("%i", array[i]);
+    }
+    printf("\n");
 
-    if (strcmp(str1, str2) == 1) {
-        printf("Stimmen nicht ueberein :(");
-    } else {
-        printf("Stimmen ueberein :)");
+    int reverseArray[4];
+
+    int i = 0;
+    for (int j = 3; j>=0; j--) {
+        reverseArray[i] = array[j];
+        printf("%i", reverseArray[i]);
+        i++;
     }
 
+    for (int k = 0; k<0; k++) {
+        printf("%i", reverseArray[k]);
+    }
+
+    printf("\n");
+
+    system("pause");
     return 0;
 }
 
