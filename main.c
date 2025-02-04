@@ -1,8 +1,15 @@
 #include <stdio.h>
-#include <time.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#ifdef _WIN32
+    #include <windows.h>
+    #include <Lmcons.h>
+#else
+    #include <unistd.h>
+    #include <sys/types.h>
+    #include <pwd.h>
+#endif
 
 // Global Variables
 const char * logfile = "\\\\stadtwbbaram\\dip$\\Apl\\Custom Programs\\Logs\\sfc_scan.log";
